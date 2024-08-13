@@ -1,0 +1,20 @@
+/* Buttons/Input/Dropdown */
+button,
+.checkbox-container,
+input[type='text']:not(.prompt-input),
+input[type='text']:focus:not(.prompt-input),
+input[type='search'],
+input[type='email'],
+input[type='password'],
+input[type='number'] {
+  border: solid 1px var(--vim-primary-color);
+  font-size: var(--font-family-size);
+  font-family: var(--font-family);
+}
+.checkbox-container:after {
+  background-color: var(--vim-primary-color);
+}
+.dropdown {
+  border: solid 1px var(--vim-primary-color);
+  font-size: var(--font-family-size);
+}

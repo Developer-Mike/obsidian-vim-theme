@@ -1,0 +1,110 @@
+/* VIEW HEADER */
+.view-header {
+  flex-wrap: nowrap;
+  /* align-items: center; */
+}
+.workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header {
+  border-bottom: 1px solid var(--text-accent);
+}
+.workspace-leaf.mod-active .view-header {
+border-width: 0 0 1px 0;
+border-color: var(--text-accent);
+}
+.view-header-title {
+  font-size: var(--font-family-size);
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+}
+.workspace-split.mod-root > .workspace-leaf:last-of-type .workspace-leaf-content,
+.workspace-split.mod-root > .workspace-leaf:first-of-type .workspace-leaf-content {
+  border-radius: 0;
+}
+/* Active Pane Prompt (Header Icon) */
+.mod-active .view-header-icon,
+.mod-active .view-header-icon:hover {
+  background-color: var(--vim-primary-color);
+  color: transparent;
+  font-size: 0;
+  padding-right: 0;
+  width: calc(4 * var(--char-width));
+  min-width: calc(4 * var(--char-width)); /* required for header flex display */
+  height: calc(var(--header-height) + 1px);
+  top: -1px;
+  /* padding-top: 0.25rem !important; */
+  border: 1px solid var(--vim-primary-color);
+  margin-right: 20px;
+  border-right: 10px solid transparent;
+}
+.mod-active .view-header-icon:after {
+  content: "";
+  position: absolute;
+  right: calc(-0.5 * var(--header-height) - 10px); /* 1/2 * header-height + .view-header-icon(border-right) */
+  top: 0px;
+  width: 0;
+  height: 0;
+  border-top: calc(0.5 * var(--header-height)) solid transparent;
+  border-bottom: calc(0.5 * var(--header-height)) solid transparent;
+  border-left: calc(0.5 * var(--header-height)) solid var(--vim-primary-color); 
+}
+.mod-active .view-header-icon:before {
+  content: var(--pwd);
+  color: var(--background-color);
+  font-weight: bold;
+  font-size: var(--font-family-size);
+  position: absolute;
+  height: var(--header-height);
+  top: 0;
+  left: 6px;
+  display: flex;
+  align-items: center;
+  /* margin-right: -10px; */
+  /* border: 1px solid var(--vim-primary-color); */
+}
+.view-header-icon,
+.view-header-icon:hover {
+  color: transparent;
+  font-size: 0;
+  padding-right: 0;
+  width: 3em;
+  /* padding-top: 0.25rem !important; */
+}
+
+.view-actions {
+  padding: 0 10px;
+}
+.view-action[aria-label="Close"],
+.view-action[aria-label="More options"],
+.view-action[aria-label*="Preview"],
+.view-action[aria-label*="Edit"] {
+  color: transparent;
+  width: var(--font-family-size);
+}
+.view-action:before {
+  color: var(--vim-primary-color);
+  font-weight: bold;
+  font-size: var(--font-family-size);
+  position: relative;
+  bottom: 3px;
+}
+.view-action[aria-label*="Preview"]:before,
+.view-action[aria-label*="Edit"]:before,
+.view-action.mod-close-leaf:before,
+a[aria-label="More options"]:before {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  /* bottom: 0; */
+}
+.view-action[aria-label*="Preview"]:before {
+  content: var(--preview-mode);
+}
+.view-action[aria-label*="Edit"]:before {
+  content: var(--edit-mode);
+}
+.view-action.mod-close-leaf:before {
+  content: var(--quit);
+}
+a[aria-label="More options"]:before {
+  content: var(--more);
+}

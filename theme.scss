@@ -1,0 +1,108 @@
+@import 'src/font.scss';
+
+/* Root Variables */
+:root {
+  --default-text-color: #feeabb;
+  --default-text-color-rgb: 254, 234, 187;
+  --text-faint-color: #7c7065;
+  --background-color: #272727;
+  --background-color-rgb: 39, 39, 39;
+  --border-color: #17191e;
+
+  --in-folder-text-color: #d88089;
+  --pwd-text-color: #85b0a6;
+
+  --folder-text-color: #90d385;
+  --dropdown-arrow-color: #ff8117;
+
+  --status-bar-text-color: #1a1e21;
+  --status-bar-background-color: #a89984;
+  --status-bar-text-color-alt: #a8a18b;
+  --status-bar-background-color-alt: #4f4844;
+
+  --font-family: Sauce Code Pro;
+  --default-font: var(--font-family);
+  --font-monospace: var(--font-family);
+
+  /* Prompts */
+  --input-prompt: "$";
+  --not-created-note: "+";
+  --pin-command: "*";
+  --selected: ">";
+  --active-tab: "^";
+  --collapse-right: ">";
+  --collapse-down: "v";
+  --show-more-top: "+\\";
+  --show-more-bottom: "+/";
+  --search: "/";
+  --replace: ":";
+  --prev: "<";
+  --next: ">";
+  --all: "-a";
+  --close: "x";
+  --quit: "/q";
+  --preview-mode: "/p";
+  --edit-mode: "/e";
+  --more: "/?";
+  --pwd: "PWD";
+}
+
+body {
+  --header-height: 30px;
+  --status-bar-height: var(--header-height);
+}
+
+.theme-dark {
+  --background-primary: var(--background-color);
+  --background-primary-alt: var(--background-color);
+  --background-secondary: var(--background-color);
+  --background-secondary-alt: var(--background-color);
+  
+  --background-modifier-border: var(--border-color);
+  
+  --text-normal: var(--default-text-color);
+
+  // Link text
+  --text-accent: var(--default-text-color);
+  --text-accent-hover: var(--vim-primary-color);
+  --link-unresolved-decoration-color: var(--text-faint);
+  
+  // UI
+  --text-muted: var(--default-text-color);
+  --text-muted-rgb: var(--default-text-color-rgb);
+
+  // Bullet points
+  --text-faint: var(--text-faint-color);
+
+  // Focused UI
+  --text-on-accent: var(--default-text-color);
+
+  // Input Background
+  --interactive-normal: var(--background-color);
+  --interactive-hover: var(--background-color);
+  --interactive-accent: var(--background-color);
+  --interactive-accent-rgb: var(--background-color-rgb);
+  --interactive-accent-hover: var(--background-color);
+}
+
+@import 'src/declutter.scss';
+@import 'src/tabs.scss';
+@import 'src/status-bar.scss';
+
+/*
+@import 'src/ui-elements.scss';
+@import 'src/editor-header.scss';
+@import 'src/editor.scss';
+@import 'src/status-bar.scss';
+@import 'src/modal.scss';*/
+
+
+
+/* !(temporarily) Hide search suggestions */
+.suggestion-container.mod-search-suggestion {
+  display: none;
+}
+/* Hide instructions */
+.prompt-instructions {
+  display:none;
+}

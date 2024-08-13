@@ -1,18 +1,15 @@
-‼️ If you don't see the gear icon ⚙️ for Settings, use `Ctrl/Cmd` + `,` to open the Settings panel ‼️
-
-
-# Obsidian Terminal Theme
-
-> An [Obsidian](https://obsidian.md) theme that *emulates* a terminal.
+```bash
+sass --watch theme.scss theme.css
+```
 
 ![](screenshots/terminal.png)
 
 **[TOC]**
 
-* [Features](#features)
-* [Screenshots](#screenshots)
-* [Current Limitations](#current-limitations)
-* [Future & Thank You](#future--thank-you)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Current Limitations](#current-limitations)
+- [Future \& Thank You](#future--thank-you)
 
 ## Features
 
@@ -97,3 +94,30 @@ I will keep optimizing this theme. I already have some features in my mind that 
 I also have some wild ideas such as building plugins that work with the theme to provide a more *terminal-ish* experience.
 
 I want to say thank you for trying my theme. If you see any bugs or have any suggestions and feature requests, please file an issue on [GitHub](https://github.com/zcysxy/Obsidian-Terminal-Theme/issues) or just tag me `@Atlas#7560` on Discord, this theme won't be better without your generous help ;)
+
+# Testing
+```md
+# Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6
+
+**Bold**
+*Italic*
+***Bold & Italic***
+
+[Link](https://google.com)
+[[Internal Link]]
+
+- A list item
+- Another list item
+  - A nested list item
+  - Another nested list item
+
+1. An ordered list item
+2. Another ordered list item
+   1. A nested ordered list item
+   2. Another nested ordered list item
+```

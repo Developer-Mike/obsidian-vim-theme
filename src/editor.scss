@@ -1,0 +1,120 @@
+/******************************/
+.markdown-source-view.mod-cm5 {
+  padding: 0px;
+}
+.CodeMirror-lines {
+  padding-left: 20px;
+}
+.CodeMirror-line {
+  line-height: var(--editor-line-height);
+  text-indent: unset !important; /* important added for hard-coded style */
+  padding-left: 5px !important;
+}
+.cm-s-obsidian {
+  line-height: var(--editor-line-height);
+  font-size: var(--font-family-size);
+  font-family: var(--font-family);
+  /* ~~top border~~ ! move to .view-header */
+  /* border-style: solid;
+  border-width: 1px 0px 0px 0px;
+  border-color: var(--vim-primary-color); */
+}
+
+/* Active Line Prompt */
+.CodeMirror-activeline .CodeMirror-line:before {
+  content: var(--input-prompt);
+  position: absolute;
+  left: -0.5em;
+}
+
+/* Cursor */
+.cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
+	background-color: var(--vim-primary-color);
+}
+
+/* Headers */
+.cm-s-obsidian .HyperMD-header {
+  padding-bottom: 0;
+  line-height: var(--editor-line-height) !important;
+}
+.cm-header {
+  font-size: var(--font-family-size);
+}
+
+/* Inline Formats */
+.cm-s-obsidian .cm-header, .cm-s-obsidian .cm-strong {
+  font-weight: bold;
+}
+.cm-formatting.cm-formatting-code.cm-inline-code {
+  background-color: transparent;
+}
+.cm-s-obsidian span.cm-inline-code {
+  color: var(--vim-primary-color);
+  font-size: var(--font-family-size);
+  font-style: italic;
+  font-weight: bold;
+}
+
+.cm-s-obsidian span.cm-formatting-highlight,
+.cm-s-obsidian span.cm-highlight {
+  background-color: unset;
+  font-weight: bold;
+  font-size: var(--font-family-size);
+}
+
+/* List */
+.cm-s-obsidian .HyperMD-list-line {
+  padding-top: 0px;
+  min-height: unset;
+}
+
+/* Code block */
+.cm-s-obsidian span.cm-inline-code.cm-hmd-indented-code {
+  font-style: normal;
+}
+
+.cm-s-obsidian .HyperMD-codeblock,
+.cm-formatting.cm-formatting-code-block,
+.cm-hmd-codeblock {
+  color: var(--vim-primary-color);
+  font-size: var(--font-family-size);
+  line-height: var(--editor-line-height);
+  font-weight: bold;
+}
+
+/* Footnote & Links */
+.cm-s-obsidian span.cm-footref,
+.cm-s-obsidian span.cm-blockid,
+.cm-s-obsidian .HyperMD-footnote span.cm-hmd-barelink {
+  display: inline;
+  vertical-align: unset;
+  margin-top: 0;
+  font-size: var(--font-family-size);
+}
+.cm-s-obsidian span.cm-link.cm-hmd-barelink.cm-footref:not(.cm-formatting-link),
+.cm-s-obsidian span.cm-blockid,
+.cm-s-obsidian .HyperMD-footnote span.cm-hmd-barelink:not(.cm-formatting-link) {
+  font-style: italic;
+  text-decoration: underline;
+}
+.cm-s-obsidian .HyperMD-footnote span.cm-hmd-footnote:not(.cm-formatting-link) {
+  text-decoration: underline;
+}
+/* .cm-s-obsidian span.cm-link.cm-hmd-barelink:not(.cm-formatting-link) {
+  font-style: normal;
+} */
+.cm-s-obsidian .HyperMD-footnote {
+  font-size: var(--font-family-size);
+}
+
+/* math */
+.cm-s-obsidian .cm-math {
+  color: var(--vim-primary-color);
+}
+
+/* Escape char */
+.cm-s-obsidian span.cm-hmd-escape-char,
+.cm-s-obsidian span.cm-hmd-escape-backslash {
+  color: var(--vim-primary-color);
+}
+/******************************/

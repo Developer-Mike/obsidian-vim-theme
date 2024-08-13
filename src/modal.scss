@@ -1,0 +1,200 @@
+/* PROMPT WINDOW */
+.prompt {
+  font-size: var(--font-family-size);
+  display: unset;
+  /* position: absolute; */
+  bottom: var(--status-bar-height);
+  top: 50%;
+  width: 100%;
+  max-width: unset;
+  max-height: 50%;
+  border-style: solid;
+  border-width: 1px 0 0px 0;
+  border-radius: unset;
+  /* padding-top: 9px; */
+  padding: 0px 20px;
+}
+.modal-bg {
+  background-color: unset;
+}
+input {
+  font-family: var(--font-family) !important;
+}
+input.prompt-input {
+  font-size: var(--font-family-size);
+  padding: 0 0 0 5px; /* same as CodeMirror line */
+  border-width: 0;
+}
+.prompt:before {
+  content: var(--input-prompt);
+  position: absolute;
+  top: calc(20px - 0.5 * var(--editor-line-height) * 1em);
+  left: calc(20px - 0.5em);
+}
+.prompt-results {
+  position: absolute;
+  top: calc(20px + 1em);
+  bottom: 0;
+  right: 20px;
+  left: 10px;
+  /* max-height: 90%; */
+  padding-top: 0;
+}
+.suggestion-item {
+  font-size: var(--font-family-size);
+  padding: 0 0 0 15px;
+  border-width: 0;
+  height: calc(var(--editor-line-height) * 1em);
+}
+/* .is-selected {
+  border-style: solid;
+  border-color: var(--vim-primary-color);
+  border-width: 1px 0;
+} */
+.is-selected:not(.community-theme):before {
+  content: var(--selected);
+  position: absolute;
+  left: calc(-0.5em + 10px); /* 10px = .suggestion-item(border-left) - .CodeMirror-line(border-left) */
+  bottom: 1px;
+}
+.suggestion-flair {
+  color: transparent;
+  height: 1.5em;
+  position: absolute;
+  top: 0;
+}
+.suggestion-item:not(.is-selected) > .suggestion-content + .suggestion-flair:before {
+  content: var(--pin-command);
+  color: var(--vim-primary-color);
+  position: absolute;
+  left: -0.5em;
+  bottom: 0.02em;
+}
+
+/* Quick Switcher */
+.suggestion-item:not(.is-selected) > .suggestion-flair[aria-label*="Not"]:before {
+  content: var(--not-created-note);
+  color: var(--vim-primary-color);
+  position: absolute;
+  left: -0.5em;
+  /* bottom: 1em; */
+}
+kbd {
+  font-size: var(--font-family-size);
+}
+.suggestion-hotkey {
+  font-family: var(--font-family);
+}
+
+/* Suggestion (Slash Command/Link suggestion) */
+.suggestion-container {
+  max-width: unset;
+  left: 0 !important;
+  width: 100%;
+  height: calc(var(--editor-line-height) * var(--font-family-size) * 8 + 2px);
+  border-radius: 0;
+  border-width: 1px 0 1px 0;
+  padding: 0 10px 0 10px;
+  margin-top: -5px;
+  box-shadow: none;
+}
+.suggestion {
+  max-height: 100%;
+}
+.suggestion-item .suggestion-note {
+  /* display: none; */
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: var(--font-family-size);
+}
+/*TODO Position adjustment when window is above */
+
+/* Setting/Store page */
+.modal.mod-settings,
+.modal.mod-community-plugin,
+.modal.mod-community-theme {
+  width: 100%;
+  height: 100%;
+  max-width: unset;
+  border-radius: 0;
+}
+.modal.mod-settings .vertical-tab-header,
+.modal.mod-settings .vertical-tab-content-container {
+  /* height: 100%; */
+  height: 100vh;
+  overflow: auto;
+  padding: 0;
+}
+.modal.mod-settings .vertical-tab-header,
+.community-plugin-search {
+  border-right: 1px solid var(--vim-primary-color);
+}
+.community-theme {
+  border: 1px solid var(--vim-primary-color)
+}
+/* Setting Fonts */
+.horizontal-tab-nav-item,
+.vertical-tab-nav-item,
+.setting-item-description,
+.setting-item-name {
+  font-size: var(--font-family-size);
+}
+.setting-item-name {
+  font-weight: bold;
+}
+.setting-item-control select {
+  max-width: calc(20 * var(--char-width));
+}
+.setting-item-control button {
+  font-size: var(--font-family-size);
+}
+.setting-hotkey {
+  font-size: var(--font-family-size);
+  display: flex;
+  align-items: center;
+}
+.mobile-option-setting-item {
+  font-size: var(--font-family-size);
+}
+/* Setting item padding */
+.vertical-tab-content {
+  padding: 16px 0;
+}
+.setting-item {
+  padding: 18px 30px;
+}
+.setting-item + .setting-item.setting-item-heading {
+  border-top: 1px solid var(--vim-primary-color);
+}
+.community-theme-filters-container,
+.hotkey-search-container {
+  padding: 10px 30px 30px 30px;
+}
+.hotkey-list-container {
+  padding-right: 0;
+}
+.setting-item + .setting-item-heading.setting-item:first-child {
+  padding-top: 18px;
+}
+.mobile-option-setting-item {
+  padding: 0 30px;
+}
+/* Active item */
+.vertical-tab-nav-item.is-active:before {
+  content: var(--selected);
+  margin-right: 5px;
+}
+.vertical-tab-nav-item.is-active {
+  padding-left: calc(24px - 5px - var(--char-width));
+}
+/* Close button */
+.modal-close-button {
+  top: 4px;
+  right: 10px;
+  font-size: var(--font-family-size);
+}
+.modal-close-button::before {
+  content: var(--close);
+}

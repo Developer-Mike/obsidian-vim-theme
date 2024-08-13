@@ -1,0 +1,654 @@
+/* SIDE PANELS */
+/********************************************/
+.mod-right-split {
+  margin-left: -1px;
+  border-left: 0.9px solid var(--vim-primary-color);
+  /* border-bottom: 1px solid var(--vim-primary-color); */
+}
+.mod-left-split {
+  border-right: 1px solid var(--vim-primary-color);
+  /* border-bottom: 1px solid var(--vim-primary-color); */
+}
+/* Hider specific */
+/* .hider-frameless .workspace-split.mod-left-split > div.workspace-tabs {
+  padding: 0;
+} */
+.workspace-leaf-resize-handle:not(:hover) {
+  background-color: transparent;
+}
+.workspace-tabs + .workspace-tabs {
+  margin-top: -1px;
+  border-top: 1px solid var(--vim-primary-color);
+}
+.workspace-tabs {
+  padding-right: 0;
+}
+/* Active tab */
+.workspace-tab-header-container {
+  padding-top: 2px;
+  height: 36.7px; /* should be 36px, but ...*/
+  border-bottom: 1px solid var(--vim-primary-color);
+}
+.workspace-tab-container-before {
+  /* display: none; */
+  width: 5px;
+}
+.workspace-tab-header.is-active:after {
+  content: var(--active-tab);
+  color: var(--vim-primary-color);
+  position: relative;
+  top: -12px;
+}
+.nav-header {
+  padding-top: 4px;
+}
+
+/* Collapse Icons */
+.collapse-icon svg.svg-icon {
+  width: 0;
+}
+.is-collapsed .collapse-icon:before,
+.collapse-icon:before {
+  color: var(--vim-primary-color);
+  width: 3px;
+  position: relative;
+  bottom: 1px;
+  font-weight: bold;
+}
+.is-collapsed .collapse-icon:before {
+  content: var(--collapse-right);
+}
+.collapse-icon:before {
+  content: var(--collapse-down);
+}
+
+/* Show more content icons */
+.search-result-hover-button.mod-top:before,
+.search-result-hover-button.mod-bottom:before {
+  width: 16px;
+  font-size: 13px;
+  font-weight: bold;
+  position: relative;
+  background-color: transparent;
+}
+.search-result-hover-button.mod-top:before {
+  content: var(--show-more-top);
+  top: -4px;
+}
+.search-result-hover-button.mod-bottom:before {
+  content: var(--show-more-bottom);
+  bottom: -4px
+}
+.search-result-hover-button.mod-top svg,
+.search-result-hover-button.mod-bottom svg {
+  width: 0;
+}
+.search-result-hover-button.mod-bottom,
+.search-result-hover-button.mod-top {
+  background-color: transparent;
+}
+
+/* Search Result */
+.search-result-file-match + .search-result-file-match {
+  border-top: 0.5px solid var(--vim-primary-color);
+  border-radius: 0;
+}
+.search-result-file-match:not(:last-child) {
+  margin-bottom: 0;
+}
+.search-result-file-match:after {
+  height: 0;
+}
+
+/* Not created files */
+div[aria-label*="Not created"]:before {
+  content: var(--not-created-note);
+  color: var(--vim-primary-color);
+  position: relative;
+  right: 8px;
+  bottom: 1px;
+  font-weight: bold;
+}
+div[aria-label*="Not created"] svg {
+  width: 0;
+}
+/********************************************/
+
+/* Workspace (Center Panes) */
+.workspace-split.mod-vertical > .workspace-leaf,
+.workspace-split.mod-vertical > .workspace-split {
+  padding-right: 0;
+}
+.workspace-split.mod-vertical > .workspace-leaf + .workspace-leaf,
+.workspace-leaf + .workspace-split.mod-horizontal,
+.workspace-split.mod-horizontal + .workspace-leaf,
+.workspace-split.mod-horizontal + .workspace-split.mod-horizontal {
+  margin-left: -1px;
+  border-left: 1px solid var(--vim-primary-color);
+}
+.workspace-leaf + .workspace-split.mod-vertical,
+.workspace-split.mod-horizontal > .workspace-leaf + .workspace-leaf {
+  margin-top: -1px;
+  border-top: 1px solid var(--vim-primary-color);
+}
+.workspace-split.mod-vertical + .workspace-split.mod-vertical,
+.workspace-split.mod-vertical + .workspace-leaf {
+  margin-top: -1px;
+  border-top: 0.98px solid var(--vim-primary-color);
+}
+
+
+/* PAGE PREVIEW */
+.popover.hover-popover.is-loaded {
+  width: 100%;
+  left: 0 !important;
+  border-radius: 0;
+  border-width: 1px 0;
+  border-top: 1px solid var(--vim-primary-color);
+  border-bottom: 1px solid var(--vim-primary-color);
+  height: calc(var(--editor-line-height) * var(--font-family-size) * 10);
+  /* max-height: unset; */
+}
+.popover.hover-popover .markdown-embed {
+  height: 100%;
+}
+
+/* GENERAL PREVIEW */
+.markdown-preview-view {
+  padding: 20px 20px;
+  line-height: var(--editor-line-height);
+  font-size: var(--font-family-size);
+}
+.workspace-leaf-content[data-mode="preview"] .view-content {
+  border-top: 1px solid var(--vim-primary-color);
+}
+
+/* EMBED PREVIEW */
+/******************************/
+.markdown-embed .markdown-preview-view {
+  padding: 0px 25px;
+  line-height: var(--editor-line-height);
+  font-size: var(--font-family-size);
+  font-family: var(--font-family);
+}
+
+/* Headers */
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+  margin: 0;
+  font-size: var(--font-family-size);
+}
+
+/* Inline Formats */
+.markdown-preview-view p {
+  margin: 0;
+}
+.markdown-preview-view code {
+  color: var(--vim-primary-color);
+  padding: 0;
+  font-size: var(--font-family-size);
+  font-style: italic;
+}
+
+.markdown-preview-view mark {
+  background-color: unset;
+  font-weight: bold;
+}
+
+a:hover {
+  color: var(--vim-primary-color);
+}
+
+.external-link {
+  padding-right: 0;
+  background: none;
+}
+
+/* List */
+.markdown-preview-view ul {
+  margin: 0;
+  padding-inline-start: calc(2 * var(--char-width));
+}
+.markdown-preview-view ol {
+  margin: 0;
+  margin-left: var(--char-width);
+  padding-inline-start: calc(2 * var(--char-width));
+}
+.markdown-preview-view ol li {
+  padding-inline-start: 0;
+}
+.markdown-preview-view input.task-list-item-checkbox {
+  margin: 0;
+  width: calc(6.5 * var(--char-width));
+}
+.markdown-preview-view .task-list-item-checkbox {
+  filter: hue-rotate(290);
+}
+
+/* Embed */
+span.internal-embed.file-embed.mod-empty.is-loaded {
+  margin: -1px;
+  border-radius: 0;
+  padding: calc(var(--editor-line-height) * var(--font-family-size)) calc(2 * var(--char-width));
+}
+
+/* Blockquote */
+.markdown-preview-view blockquote {
+  border-radius: 0;
+  border-left-width: 1px;
+  margin: -1px 0;
+  padding: calc(var(--editor-line-height) * var(--font-family-size)) calc(2 * var(--char-width));
+}
+
+/*.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before {*/
+    /*left: unset;*/
+/*}*/
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before, .markdown-source-view.mod-cm6 .cm-blockquote-border:before {
+    /*content: "|";*/
+    /*color: var(--vim-primary-color);*/
+    /*border: none;*/
+    border-color: var(--vim-primary-color);
+}
+
+/* Code block */
+.markdown-preview-view pre,
+.markdown-preview-view pre[class*="language-"] {
+  margin: 0;
+  padding: 0;
+  padding-left: calc(2 * var(--char-width));
+  line-height: var(--editor-line-height);
+  background: transparent;
+}
+.markdown-preview-view code,
+.markdown-preview-view code[class*="language-"] {
+  font-style: normal;
+  line-height: var(--editor-line-height);
+}
+
+/* Table */
+.markdown-preview-view table {
+  margin: 0;
+}
+.markdown-preview-view th, .markdown-preview-view td {
+  padding: 0 var(--char-width);
+}
+
+/* Footnote */
+sup {
+  vertical-align: unset;
+  font-size: var(--font-family-size);
+}
+
+/* hr */
+.markdown-preview-view hr {
+  margin: 0;
+  margin-top: calc(var(--editor-line-height) * var(--font-family-size));
+  height: calc(var(--editor-line-height) * var(--font-family-size));
+}
+
+/* Metadata */
+.frontmatter-container {
+  padding: calc(var(--editor-line-height) * var(--font-family-size)) calc(2 * var(--char-width));
+  border-radius: 0;
+  font-size: var(--font-family-size);
+  margin: -1px 0;
+}
+.frontmatter-container .frontmatter-container-header {
+  font-size: var(--font-family-size);
+  margin: 0 0 -1px 0;
+}
+.frontmatter-container .frontmatter-collapse-indicator:before {
+  font-weight: normal;
+}
+.frontmatter-container .frontmatter-section {
+  margin: 0;
+}
+.frontmatter-container .tag,
+.frontmatter-container .frontmatter-alias {
+  font-size: var(--font-family-size);
+  border-radius: 0;
+  padding: 0 0;
+  margin: 0 var(--char-width);
+  line-height: var(--editor-line-height);
+  border-width: 0;
+  background-color: transparent;
+}
+.frontmatter-container .mod-aliases .frontmatter-section-label {
+  flex-basis: calc(8 * var(--char-width));
+}
+.frontmatter-container .mod-tags .frontmatter-section-label {
+  flex-basis: calc(5 * var(--char-width));
+}
+.frontmatter-container .frontmatter-alias-icon {
+  width: var(--char-width);
+  margin-right: 0;
+}
+.frontmatter-container .frontmatter-alias-icon > svg {
+  width: 10px !important;
+}
+/******************************/
+
+/* Graph View */
+canvas {
+  border-top: 1px solid var(--vim-primary-color) !important;
+}
+.theme-dark .graph-view.color-fill-tag,
+.theme-dark .graph-view.color-fill-attachment {
+  color: var(--vim-primary-color);
+  opacity: 0.6;
+}
+.graph-view.color-fill-focused {
+  color: var(--vim-primary-color);
+}
+
+/* Search result matched color */
+.search-result-file-matched-text,
+.cm-s-obsidian span.obsidian-search-match-highlight,
+.markdown-preview-view .search-highlight > div,
+.markdown-preview-view .search-highlight > div.is-active {
+  background-color: unset;
+  border: 1px solid var(--vim-primary-color);
+  mix-blend-mode: normal;
+}
+.cm-s-obsidian span.obsidian-search-match-highlight,
+.search-result-file-matched-text {
+  margin: -1px;
+}
+
+/* GUTTER */
+.CodeMirror-foldgutter-open:after {
+  content: var(--collapse-down);
+  font-size: var(--font-family-size);
+}
+.CodeMirror-foldgutter-folded:after {
+  content: var(--collapse-right);
+  font-size: var(--font-family-size);
+}
+.CodeMirror-foldgutter-open,
+.CodeMirror-foldgutter-folded {
+  font-size: var(--font-family-size);
+  display: flex;
+  align-items: center;
+}
+/* Move gutter to the left */
+/* And keep gutter 4-char-width for line number, */
+/* keep gutter 1-char-width for gutter only */
+.CodeMirror-linenumber {
+  min-width: none;
+  width: calc(3 * var(--char-width)) !important;
+  padding: 0;
+}
+.CodeMirror-gutter.CodeMirror-linenumbers {
+  width: calc(3 * var(--char-width)) !important;
+}
+.CodeMirror-sizer[style*="margin-left: 3"],  /* line number only */
+.CodeMirror-sizer[style*="margin-left: 4"] { /* line number + gutter */
+  margin-left: calc(4 * var(--char-width)) !important;
+}
+.CodeMirror-sizer[style*="margin-left: 1"] { /* gutter only */
+  margin-left: calc(1 * var(--char-width)) !important;
+}
+.CodeMirror-sizer[style*="margin-left: 3"] .CodeMirror-gutter-wrapper,
+.CodeMirror-sizer[style*="margin-left: 4"] .CodeMirror-gutter-wrapper {
+  left: calc(-30px - 2 * var(--char-width)) !important;
+}
+.CodeMirror-sizer[style*="margin-left: 1"] .CodeMirror-gutter-wrapper {
+  left: calc(-2 * var(--char-width)) !important;
+}
+.CodeMirror-gutters {
+  left: var(--char-width) !important;
+}
+
+/* Preview folding */
+.markdown-preview-view.allow-fold-heading,
+.markdown-preview-view.allow-fold-lists {
+  padding-left: 30px;
+}
+.markdown-preview-view ul > li > .list-collapse-indicator {
+  padding-left: 14px;
+  padding-top: 2px;
+}
+.markdown-preview-view ol > li > .list-collapse-indicator {
+  padding-left: 2px;
+  padding-top: 0.5px;
+}
+.markdown-preview-view li.task-list-item .list-collapse-indicator {
+  padding-left: 12px;
+  padding-top: 0.5px;
+}
+
+/* Search */
+.document-search-container,
+.document-search-container.mod-replace-mode {
+  height: auto;
+  padding: 0 5px;
+  border-top: 0;
+}
+.document-search,
+.document-replace {
+  height: calc(var(--editor-line-height) * var(--font-family-size));
+}
+.search-input-container > input,
+.document-search > input[type='text'],
+.document-search > input[type='text']:focus,
+.document-search > input[type='text']:hover,
+.document-replace > input[type='text'],
+.document-replace > input[type='text']:focus,
+.document-replace > input[type='text']:hover {
+  border-width: 0;
+  padding: 0 14px 1px 12px;
+  background-color: var(--background-primary);
+  height: calc(var(--editor-line-height) * var(--font-family-size));
+  margin: 0 8px;
+}
+.document-search > .document-search-buttons:before {
+  content: var(--search);
+  position: absolute;
+  font-size: var(--font-family-size);
+  left: 15px;
+}
+.document-replace > .document-replace-buttons:before {
+  content: var(--replace);
+  position: absolute;
+  font-size: var(--font-family-size);
+  left: 15px;
+}
+button.document-search-button {
+  font-size: 0;
+  border: none;
+  margin-top: 0;
+  padding-bottom: 4px;
+}
+button.document-search-button:before {
+  font-size: var(--font-family-size);
+}
+button.document-search-button[aria-label='Shift + F3']:before {
+  content: var(--prev);
+}
+button.document-search-button[aria-label='Enter or F3']:before {
+  content: var(--next);
+}
+button.document-search-button[aria-label='Enter']:before {
+  content: var(--next);
+}
+button.document-search-button:not([aria-label]):before {
+  content: var(--all);
+}
+.document-search-close-button:before {
+  content: var(--close);
+  font-size: var(--font-family-size);
+}
+.document-search-close-button {
+  top: unset;
+}
+.document-replace-buttons {
+  margin-right: 18px;
+}
+
+/* Global search close button */
+.search-input-clear-button:before {
+  content: var(--close);
+  font-size: var(--font-family-size);
+  position: relative;
+  bottom: 2px;
+  right: -12px;
+}
+
+/* Empty State */
+.empty-state-container:after {
+  content: "---------------------------------\A                     \\   ^__^\A                      \\  (oo)\\_______\A                         (__)\\        )\\/\\\A                             ||----w |\A                             ||     ||";
+  white-space: pre;
+}
+.empty-state-title {
+  margin-top: 0;
+}
+/* Empty right sidebar */
+.mod-right-split .u-muted:before {
+  content: "\A\A    |\\__/,|   (`\\\A  _.|o o  |_   ) )\A-(((---(((--------\A";
+  white-space: pre;
+}
+.mod-left-split .u-muted:before {
+  content: "    /\\___/\\\A     `)9 9('\A     {_:Y:.}_\A----( )U-'( )----------\A     ```   '''\A";
+  white-space: pre;
+}
+.suggestion-empty {
+  font-size: var(--font-family-size);
+  line-height: calc(0.8 * var(--editor-line-height));
+}
+.suggestion-empty:before {
+  content: ' _      _      _\A __(.)< __(.)> __(.)=\A \\___)  \\___)  \\___) \A';
+  white-space: pre;
+}
+div.search-empty-state {
+  font-size: var(--font-family-size);
+  line-height: calc(0.8 * var(--editor-line-height));
+}
+div.search-empty-state:before {
+  content: '        (\\ /)\A        ( . .)\A        c(")(")\A';
+  white-space: pre;
+  font-style: italic;
+  letter-spacing: -3px;
+}
+
+
+/* Notice */
+.notice {
+  border: 1px solid var(--vim-primary-color);
+}
+.modal:not(.mod-settings):not(.mod-community-plugin):not(.mod-community-theme) {
+  border: 1px solid var(--vim-primary-color);
+}
+
+/* TOGGLE */
+/* .checkbox-container,
+.checkbox-container:after {
+  border: none;
+  box-shadow: none;
+  color: transparent;
+  background-color: transparent;
+}
+.checkbox-container:before {
+  white-space: pre;
+  color: var(--vim-primary-color);
+  opacity: 1;
+  position: absolute;
+  top: -11px;
+  left: -31px;
+  font-weight: bold;
+}
+.checkbox-container:not(.is-enabled):before {
+  content: "____\A     O___)";
+}
+.checkbox-container.is-enabled:before {
+  content: "____\A    (###O";
+} */
+/* BUTTON */
+/* button {
+  border: none;
+}
+button:before, button:after,
+button:focus:before, button:focus:after {
+  font-weight: bold;
+}
+button:before {
+  content: "[";
+}
+button:after {
+  content: "]"
+}
+button:focus:before {
+  content: ">"
+}
+button:focus:after {
+  content: "<"
+} */
+
+/* TABS */
+/* .plugin-tabs .mod-root.workspace-split.mod-vertical div.workspace-split.mod-vertical > div.workspace-leaf.stayopen,
+.plugin-tabs div.mod-root.workspace-split.mod-vertical > div.workspace-leaf.stayopen,
+.plugin-tabs .mod-root.workspace-split.mod-vertical div.workspace-split.mod-vertical > div.workspace-leaf.mod-active,
+.plugin-tabs div.mod-root.workspace-split.mod-vertical > div.workspace-leaf.mod-active {
+  height: var(--headerheight);
+  min-height: unset;
+  top: 0;
+  min-width: var(--w1);
+  max-width: var(--w2);
+  flex-grow: 1;
+  flex-shrink: 1;
+  align-self: unset;
+  position: unset;
+  contain: unset;
+  display: unset;
+}
+.plugin-tabs .workspace-leaf.mod-active.stayopen .workspace-leaf-content {
+  contain: unset !important;
+  position: absolute !important;
+  display: unset !important;
+}
+.plugin-tabs .workspace-leaf.mod-active.stayopen .workspace-leaf-content .view-content {
+  position: absolute;
+  align-self: stretch;
+  bottom: 0;
+  left: 0;
+  order: 99;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: calc(100% - var(--headerheight) * var(--rows));
+  overflow-y: hidden;
+  padding-right: 1px;
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+} */
+
+/* TEST FILED */
+/* Fix dettached PWD */
+/* .workspace-leaf.mod-active {
+  contain: none;
+  margin-left: -1px;
+}
+.workspace-leaf.mod-active:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -1px;
+  border-style: solid;
+  border-width: var(--header-height) 0px 0px 1px;
+  border-color: var(--vim-primary-color);
+  z-index: 9999;
+}
+.workspace-leaf.mod-active .view-header:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0px;
+  border-style: solid;
+  border-width: var(--header-height) 0px 0px 1px;
+  border-color: var(--vim-primary-color);
+  z-index: 9999;
+} */

@@ -1,0 +1,77 @@
+// Tab row
+.workspace-tab-header-container {
+  padding: 0;
+
+  // Right Icons
+  .workspace-tab-header-tab-list {
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .sidebar-toggle-button {
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  &:hover {
+    .workspace-tab-header-tab-list {
+      opacity: 1;
+    }
+
+    .sidebar-toggle-button {
+      opacity: 1;
+    }
+  }
+
+  // Tabs
+  .workspace-tab-header-container-inner {
+    padding: 0;
+    margin: 0;
+
+    .workspace-tab-header {
+      padding: 0 5px;
+
+      box-shadow: none;
+      border-radius: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+// Alternate colors
+.workspace-tab-header {
+  background-color: var(--status-bar-background-color-alt);
+}
+
+.workspace-tab-header:nth-last-child(odd) {
+  --status-bar-mask-color: var(--status-bar-background-color-alt);
+
+  color: var(--status-bar-text-color);
+  background-color: var(--status-bar-background-color);
+}
+
+.workspace-tab-header:nth-last-child(even) {
+  --status-bar-mask-color: var(--status-bar-background-color);
+
+  color: var(--status-bar-text-color-alt);
+  background-color: var(--status-bar-background-color-alt);
+}
+
+// Arrows
+.workspace-tab-header:after {
+  all: initial;
+  content: "";
+  
+  margin-left: 5px;
+
+  border-top: calc(0.5 * var(--status-bar-height)) solid var(--status-bar-mask-color);
+  border-bottom: calc(0.5 * var(--status-bar-height)) solid var(--status-bar-mask-color);
+  border-left: calc(0.5 * var(--status-bar-height)) solid transparent;
+}
+
+.workspace-tab-header:last-child:after {
+  --status-bar-mask-color: var(--status-bar-background-color-alt);
+}
