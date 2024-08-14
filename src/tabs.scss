@@ -29,32 +29,55 @@
     margin: 0;
 
     .workspace-tab-header {
-      padding: 0 5px;
+      padding: 0;
 
       box-shadow: none;
       border-radius: 0;
 
+      &:hover .workspace-tab-header-inner {
+        background-color: transparent;
+      }
+
       &::before {
         display: none;
+      }
+
+      .workspace-tab-header-inner::after {
+        content: none;
       }
     }
   }
 }
 
+.workspace-tab-header-new-tab {
+  padding: 0;
+  margin-inline-start: 5px;
+
+  .clickable-icon:hover {
+    background-color: transparent;
+  }
+}
+
 // Alternate colors
-.workspace-tab-header {
-  background-color: var(--status-bar-background-color-alt);
+.workspace-tab-header-container {
+  background-color: var(--titlebar-background);
+}
+
+.workspace-tab-header.is-active {
+  &::before, &::after {
+    box-shadow: none !important;
+  }
 }
 
 .workspace-tab-header:nth-last-child(odd) {
-  --status-bar-mask-color: var(--status-bar-background-color-alt);
+  --tab-mask-color: var(--status-bar-background-color-alt);
 
   color: var(--status-bar-text-color);
   background-color: var(--status-bar-background-color);
 }
 
 .workspace-tab-header:nth-last-child(even) {
-  --status-bar-mask-color: var(--status-bar-background-color);
+  --tab-mask-color: var(--status-bar-background-color);
 
   color: var(--status-bar-text-color-alt);
   background-color: var(--status-bar-background-color-alt);
@@ -67,11 +90,11 @@
   
   margin-left: 5px;
 
-  border-top: calc(0.5 * var(--status-bar-height)) solid var(--status-bar-mask-color);
-  border-bottom: calc(0.5 * var(--status-bar-height)) solid var(--status-bar-mask-color);
-  border-left: calc(0.5 * var(--status-bar-height)) solid transparent;
+  border-top: calc(0.5 * var(--header-height)) solid var(--tab-mask-color);
+  border-bottom: calc(0.5 * var(--header-height)) solid var(--tab-mask-color);
+  border-left: calc(0.5 * var(--header-height)) solid transparent;
 }
 
 .workspace-tab-header:last-child:after {
-  --status-bar-mask-color: var(--status-bar-background-color-alt);
+  --tab-mask-color: var(--status-bar-background-color-alt);
 }
